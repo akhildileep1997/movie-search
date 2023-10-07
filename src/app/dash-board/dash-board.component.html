@@ -1,0 +1,142 @@
+<div style="background-color: black;">
+  <!---------navbar-->
+<nav style="height: 100px;" class="navbar ">
+  <div class="container-fluid">
+   <div style="margin-left: 100px;" class="logo">
+   </div>
+    <div style="display: flex;justify-content: center;align-items: center;" class="title me-auto">
+      <h1 style="font-family: 'Ultra', serif;color: rgba(255, 255, 255, 0.799);"> <i class="fa-solid fa-film"></i> Omdb Movies/Series </h1>
+    </div>
+  </div>
+</nav>
+
+
+<div style="min-height: 68vh;">
+  <div class="main">
+    <div class="contents mt-5">
+     <div style="font-size: 28px;" class="search d-flex ">
+       <input class="form-control" (keyup)="search($event)" type="text" name="" id="" placeholder="Search movie">
+       <div><button style="border-radius: 50%;" class="btn btn-danger ms-3 p-3" (click)="additional()"><i class="fa-solid fa-magnifying-glass text-light"></i></button></div>
+   </div>
+    </div>
+   </div>
+
+   <div *ngIf="error"  class="error mt-5">
+    <div class="content">
+      <h5 class="text-center" style="color: rgb(242, 7, 7);">{{details.Error}}</h5>
+    </div>
+   </div>
+   
+
+   <!------additional details-->
+   <div *ngIf="additionalDetail && !error " class="main my-5">
+     <div style="color: white;"  class="additional">
+       <div style="margin-top: 50px;" class="img">
+         <img style="border: 1px solid red ;border-radius: 15px;" width="290" height="450" [src]="details.Poster" alt="">
+       </div>
+       <div class="information ms-5">
+         <div  style="font-size: 60px;" class="title">
+           <div><i class="fa-solid fa-film  text-warning"></i></div><div class="ms-5  text-warning"> {{details.Title}} : (Year{{details.Year}})</div>
+         </div>
+         <div style="font-size: 25px;" class="language mb-3">
+          <div> <i style="color: gray;" class="fa-solid fa-language "> </i> </div> <div class="ms-5"> {{details.Language}} {{details.Type}}</div>
+         </div>
+         <div style="font-size: 25px;" class="actors mb-3">
+          <div> <i style="color: rgba(255, 166, 0, 0.735);" class="fa-solid fa-person "></i></div><div class="ms-5">{{details.Actors}}</div>
+         </div>
+         <div style="font-size: 25px;" class="director mb-3">
+          <div> <i style="color: rgba(255, 0, 0, 0.639);" class="fa-solid fa-clapperboard "></i> </div><div class="ms-5">{{details.Director}}</div>
+         </div>
+         <div style="font-size: 25px;" class="writer mb-3">
+           <div><i style="color: bisque;" class="fa-solid fa-pen-nib "></i></div> <div class="ms-5">{{details.Writer}}</div>
+         </div>
+         <div style="font-size: 25px;" class="plot mb-3">
+          <div> <i style="color: aqua;" class="fa-solid fa-table "></i></div><div class="ms-5"> {{details.Plot}}</div>
+         </div>
+         <div style="font-size: 25px;" class="rating mb-3">
+           <div><i style="color: gold;" class="fa-solid fa-star "></i></div><div class="ms-5">{{details.imdbRating}}</div>
+         </div>
+       </div>
+     
+     </div>
+   </div>
+</div>
+
+
+<!-------footer-->
+<footer class="text-center text-white" style="background-color:black;border: 1px solid rgba(231, 2, 2, 0.753);">
+  <!-- Grid container -->
+  <div class="container pt-4">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        mdbRipple
+        rippleColor="dark"
+        class="btn btn-link btn-floating btn-lg text-light m-1"
+        href="#!"
+        role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2023 Copyright:
+    <a class="text-light" >Omdb-Movies@.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
